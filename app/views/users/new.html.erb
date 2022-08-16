@@ -1,0 +1,25 @@
+<%# <form action="/users" method="post" accept-charset="UTF-8">
+    <label for="user_username">Username</label>
+    <input type="text" name="user[username]" id="user_username">
+
+    <label for="user_email">Email</label>
+    <input type="email" name="user[email]" id="user_email">
+
+    <label for="user_password">Password</label>
+    <input type="password" name="user[password]" id="user_password">
+
+    <input type="submit" value="Create User">
+</form> %>
+
+<%= form_with model: @user do |form| %>
+    <%= form.label :username %>
+    <%= form.text_field :username %>
+
+    <%= form.label :email %>
+    <%= form.email_field :email, placeholder: 'email@email.com' %>
+
+    <%= form.label :password %>
+    <%= form.password_field :password %>
+
+    <%= form.submit %>
+<% end %>
